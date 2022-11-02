@@ -1,11 +1,6 @@
-=== Program 1 ===
-ATTACKMODE HID
-DELAY 500
-STRING "Hello World"
-=== Tokens 1 ===
 Token { kind: BunnyAttackmode, literal: "ATTACKMODE" }
 Token { kind: BunnyAttackType, literal: "HID" }
 Token { kind: BunnyDelay, literal: "DELAY" }
 Token { kind: Number, literal: "500" }
 Token { kind: BunnyString, literal: "STRING" }
-Token { kind: StringLiteral, literal: "Hello World" }
+Token { kind: StringLiteral, literal: "You have been hacked!" }
