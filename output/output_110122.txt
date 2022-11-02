@@ -1,0 +1,28 @@
+=== Program 1 ===
+ATTACKMODE HID
+DELAY 500
+STRING "Hello World"
+=== Tokens 1 ===
+Token { kind: BunnyAttackmode, literal: "ATTACKMODE" }
+Token { kind: BunnyAttackType, literal: "HID" }
+Token { kind: BunnyDelay, literal: "DELAY" }
+Token { kind: Number, literal: "500" }
+Token { kind: BunnyString, literal: "STRING" }
+Token { kind: StringLiteral, literal: "Hello World" }
+
+=== Program 2 ===
+ATTACKMODE HID TEST1
+TEST2DELAY 500
+STRING TEST3 "Hello World"
+=== Tokens 2 ===
+Error: Unknown identifier: TEST1 at line 1, column 16
+Error: Unknown identifier: TEST2DELAY at line 2, column 1
+Error: Unknown identifier: TEST3 at line 3, column 8
+Token { kind: BunnyAttackmode, literal: "ATTACKMODE" }
+Token { kind: BunnyAttackType, literal: "HID" }
+Token { kind: Unknown, literal: "TEST1" }
+Token { kind: Unknown, literal: "TEST2DELAY" }
+Token { kind: Number, literal: "500" }
+Token { kind: BunnyString, literal: "STRING" }
+Token { kind: Unknown, literal: "TEST3" }
+Token { kind: StringLiteral, literal: "Hello World" }
