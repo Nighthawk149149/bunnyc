@@ -15,15 +15,35 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-mod error;
+
 mod lexer;
 mod token;
 
 use lexer::Lexer;
+use token::{Token, TokenKind};
 
 fn main() {
-    Lexer::new(&std::fs::read_to_string("input.txt").unwrap())
-        .lex()
-        .iter()
-        .for_each(|t| println!("{:?}", t));
+    let mut lexer = Lexer::new("input.txt");
+
+    loop {
+        let token = lexer.next();
+
+        if Token::equals_kind(token.kind(), &TokenKind::EOF) {
+            break;
+        }
+    }
 }
+
+//? Old code, will be removed soon
+// mod error;
+// mod lexer;
+// mod token;
+
+// use lexer::Lexer;
+
+// fn main() {
+//     Lexer::new(&std::fs::read_to_string("input.txt").unwrap())
+//         .lex()
+//         .iter()
+//         .for_each(|t| println!("{:?}", t));
+// }
